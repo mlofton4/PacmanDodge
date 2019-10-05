@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pacman
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7dccee7c8d93dab40a79dd200e9f40af,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pacman
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7dccee7c8d93dab40a79dd200e9f40af,
         type: 3}
       propertyPath: m_LocalPosition.x

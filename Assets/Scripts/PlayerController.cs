@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 _initialPosition = Vector3.zero;
 
     //Start game or reset position when Pac-Man dies
-    private void Reset()
+    public void Reset()
     {
         transform.position = _initialPosition;
         animator.SetBool("isDead", false);
