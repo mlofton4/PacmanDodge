@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 0f;
+    [SerializeField] private AudioSource audiodata;
 
     private Animator animator;
     private Vector3 _up, _down, _left, _right;
     private Vector3 _currentDirection, _initialPosition;
+    private bool performed = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
         _initialPosition = transform.position;
         animator = GetComponent<Animator>();
+        
         Reset();
     }
 
@@ -37,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
         bool isMoving = true;
         bool isDead = animator.GetBool("isDead");
+
+        
+
 
         if (isDead)
         {
