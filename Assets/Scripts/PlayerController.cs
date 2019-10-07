@@ -23,8 +23,12 @@ public class PlayerController : MonoBehaviour
 
         _initialPosition = transform.position;
         animator = GetComponent<Animator>();
-        
         Reset();
+        if (performed == false)
+        {
+            StartCoroutine(StartGame());
+            //performed = true;
+        }
     }
 
     // Update is called once per frame
@@ -42,10 +46,13 @@ public class PlayerController : MonoBehaviour
         bool isMoving = true;
         bool isDead = animator.GetBool("isDead");
 
-        
 
 
-        if (isDead)
+        if (performed == false)
+        {
+            return;
+        }
+        else if (isDead)
         {
             isMoving = false;
             animator.SetBool("isMoving", isMoving);
@@ -99,5 +106,13 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isDead", false);
         animator.SetBool("isMoving", false);
         _currentDirection = _down;
+        transform.localEulerAngles = _currentDirection;
+    }
+
+    private IEnumerator StartGame()
+    {
+        audiodata.Play();
+        yield return new WaitForSeconds(audiodata.clip.length - 0.5f);
+        performed = true;
     }
 }
