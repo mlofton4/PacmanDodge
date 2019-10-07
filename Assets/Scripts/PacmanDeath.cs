@@ -7,6 +7,7 @@ public class PacmanDeath : StateMachineBehaviour
     private PlayerController playerController = null;
 
     private static int death = Animator.StringToHash("Death");
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
