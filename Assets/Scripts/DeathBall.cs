@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class DeathBall : MonoBehaviour
 {
     [SerializeField] private AudioSource audiodata;
+    [SerializeField] private GameObject scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +20,18 @@ public class DeathBall : MonoBehaviour
         if (collision.gameObject.name == "Pacman")
         {
             audiodata.Play();
+            ShowFloatingText();
             gameObject.GetComponent<Renderer>().enabled = false;
             (gameObject.GetComponent(typeof(SphereCollider)) as Collider).enabled = false;
             gameObject.GetComponent<Behaviour>().enabled = false;
             Destroy(gameObject, audiodata.clip.length);
         }
         
+    }
+
+    void ShowFloatingText()
+    {
+        var go = Instantiate(scoreText, transform.position, Quaternion.identity, transform);
+        go.GetComponent<TextMesh>().text = "100";
     }
 }

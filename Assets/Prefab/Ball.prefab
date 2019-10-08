@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiodata: {fileID: 8206582941347253745}
+  scoreText: {fileID: 3702932148512195531, guid: 6ce430a97c002c44f9ed279ed2ed5b4c,
+    type: 3}
 --- !u!82 &8206582941347253745
 AudioSource:
   m_ObjectHideFlags: 0
