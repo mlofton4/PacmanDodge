@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -8,26 +9,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource audiodata;
 
     private Animator animator;
-    private Vector3 _up, _down, _left, _right;
-    private Vector3 _currentDirection, _initialPosition;
-    private bool performed = false;
+    private Vector3 _initialPosition;
+    private bool performed;
 
     // Start is called before the first frame update
     private void Start()
     {
-        _up = Vector3.zero;
-        _down = new Vector3(0, 180, 0);
-        _left = new Vector3(0, 270, 0);
-        _right = new Vector3(0, 90, 0);
-        _currentDirection = Vector3.zero;
-
         _initialPosition = transform.position;
         animator = GetComponent<Animator>();
+        performed = false;
+
         Reset();
         if (performed == false)
         {
             StartCoroutine(StartGame());
-            //performed = true;
         }
     }
 
@@ -59,31 +54,27 @@ public class PlayerController : MonoBehaviour
         }
         else if (keyboard != null && (keyboard.upArrowKey.isPressed || keyboard.wKey.isPressed) || gamepad != null && (gamepad.dpad.up.isPressed || gamepad.leftStick.y.ReadValue() == 1))
         {
-            _currentDirection = _up;
-            transform.localEulerAngles = _currentDirection;
             animator.SetBool("isMoving", isMoving);
-            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+            transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(Vector3.forward);
         }
         else if (keyboard != null && (keyboard.downArrowKey.isPressed || keyboard.sKey.isPressed) || gamepad != null && (gamepad.dpad.down.isPressed || gamepad.leftStick.y.ReadValue() == -1))
         {
-            _currentDirection = _down;
-            transform.localEulerAngles = _currentDirection;
             animator.SetBool("isMoving", isMoving);
-            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+            transform.position += Vector3.back * movementSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(Vector3.back);
         }
         else if (keyboard != null && (keyboard.leftArrowKey.isPressed || keyboard.aKey.isPressed) || gamepad != null && (gamepad.dpad.left.isPressed || gamepad.leftStick.x.ReadValue() == -1))
         {
-            _currentDirection = _left;
-            transform.localEulerAngles = _currentDirection;
             animator.SetBool("isMoving", isMoving);
-            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(Vector3.left);
         }
         else if (keyboard != null && (keyboard.rightArrowKey.isPressed || keyboard.dKey.isPressed) || gamepad != null && (gamepad.dpad.right.isPressed || gamepad.leftStick.x.ReadValue() == 1))
         {
-            _currentDirection = _right;
-            transform.localEulerAngles = _currentDirection;
             animator.SetBool("isMoving", isMoving);
-            transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
+            transform.position += Vector3.right * movementSpeed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(Vector3.right);
         }
         else
         {
@@ -93,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //Die whenever a ghost hits us
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Enemy"))
@@ -105,10 +97,10 @@ public class PlayerController : MonoBehaviour
         transform.position = _initialPosition;
         animator.SetBool("isDead", false);
         animator.SetBool("isMoving", false);
-        _currentDirection = _down;
-        transform.localEulerAngles = _currentDirection;
+        transform.rotation = Quaternion.LookRotation(Vector3.back);
     }
 
+    //Wait until the music plays to start the game
     private IEnumerator StartGame()
     {
         audiodata.Play();
