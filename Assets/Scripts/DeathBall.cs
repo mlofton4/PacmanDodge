@@ -24,7 +24,7 @@ public class DeathBall : MonoBehaviour
             gameObject.GetComponent<Renderer>().enabled = false;
             (gameObject.GetComponent(typeof(SphereCollider)) as Collider).enabled = false;
             gameObject.GetComponent<Behaviour>().enabled = false;
-            Destroy(gameObject, audiodata.clip.length);
+            Destroy(gameObject, audiodata.clip.length + 1f); // Keep +1f to leave a trail when the floating text shows
         }
         
     }

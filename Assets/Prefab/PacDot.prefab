@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5455382348337342443}
   - component: {fileID: 2322248940752890857}
   - component: {fileID: 6526205232019607426}
-  - component: {fileID: 8206582941347253745}
+  - component: {fileID: -6547887017474698655}
   m_Layer: 0
   m_Name: PacDot
   m_TagString: Untagged
@@ -119,10 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef7783f47ca6bfb47ab0f30b077aa841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audiodata: {fileID: 8206582941347253745}
+  audiodata: {fileID: -6547887017474698655}
   scoreText: {fileID: 3702932148512195531, guid: 6ce430a97c002c44f9ed279ed2ed5b4c,
     type: 3}
---- !u!82 &8206582941347253745
+--- !u!82 &-6547887017474698655
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99107b8355f36d74ea89aa621e5cd25a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
