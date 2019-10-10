@@ -55,11 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DeathBall.cs" />
-     <Compile Include="Assets\Scripts\DestroyFloatingText.cs" />
-     <Compile Include="Assets\Scripts\GeneratePacdots.cs" />
-     <Compile Include="Assets\Scripts\PacmanDeath.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Enemy AI\BlinkyAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy AI\ClydeAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy AI\InkyAI.cs" />
+     <Compile Include="Assets\Scripts\Enemy AI\PinkyAI.cs" />
+     <Compile Include="Assets\Scripts\Food\DeathBall.cs" />
+     <Compile Include="Assets\Scripts\Food\DestroyFloatingText.cs" />
+     <Compile Include="Assets\Scripts\Food\GeneratePacdots.cs" />
+     <Compile Include="Assets\Scripts\Pacman\PacmanDeath.cs" />
+     <Compile Include="Assets\Scripts\Pacman\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ScoreManager.cs" />
      <None Include="Assets\Scripts\Font ScriptsMaterials\3DText.shader" />
  <Reference Include="Unity.Timeline.Editor">
