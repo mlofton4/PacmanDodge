@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class GeneratePacdots : MonoBehaviour
 {
-    [SerializeField] GameObject prefab;
-    [SerializeField] GameObject cube;
+    [SerializeField] GameObject prefab = null;
+    [SerializeField] GameObject cube = null;
 
     // Start is called before the first frame update
     void Start()

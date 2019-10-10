@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 0f;
-    [SerializeField] private AudioSource audiodata;
+    [SerializeField] private AudioSource audiodata = null;
 
     private Animator animator;
     private Vector3 _initialPosition;

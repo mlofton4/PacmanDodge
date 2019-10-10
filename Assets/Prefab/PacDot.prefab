@@ -122,6 +122,7 @@ MonoBehaviour:
   audiodata: {fileID: -6547887017474698655}
   scoreText: {fileID: 3702932148512195531, guid: 6ce430a97c002c44f9ed279ed2ed5b4c,
     type: 3}
+  point: 10
 --- !u!82 &-6547887017474698655
 AudioSource:
   m_ObjectHideFlags: 0

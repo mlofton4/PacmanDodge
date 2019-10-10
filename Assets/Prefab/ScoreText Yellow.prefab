@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3702932148512195532}
-  - component: {fileID: 3702932148512195533}
   - component: {fileID: 3702932148512195530}
+  - component: {fileID: 3702932148512195533}
   - component: {fileID: -4929125229459863840}
   - component: {fileID: 8535332264996793495}
   m_Layer: 0
@@ -34,6 +34,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!102 &3702932148512195530
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702932148512195531}
+  m_Text: Test
+  m_OffsetZ: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 1
+  m_Alignment: 0
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 1
+  m_RichText: 1
+  m_Font: {fileID: 12800000, guid: d87f4dfc67633ab4f9302afa87f1cb81, type: 3}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286176738
 --- !u!23 &3702932148512195533
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3d93ed0b5668e2144a1e5a6d8d064ae2, type: 3}
+  - {fileID: 2100000, guid: 3bec61f5693b93c4ab7cc00643cf04fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72,28 +94,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!102 &3702932148512195530
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3702932148512195531}
-  m_Text: Test
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 1
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 0
-  m_FontStyle: 1
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 3d93ed0b5668e2144a1e5a6d8d064ae2, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4286176738
 --- !u!114 &-4929125229459863840
 MonoBehaviour:
   m_ObjectHideFlags: 0
